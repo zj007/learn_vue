@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="vue.js"></script>
+	<title>vue</title>
+	<link rel="shortcut icon" href="vue1.ico">
+</head>
+<body>
+	<div id="app">
+		<div>
+			{{message}}
+		</div>
+		<input v-model="message">
+	</div>
+	<div id="app2">
+		<ol>
+			<li v-for="todo in todos">
+				{{todo.text}}
+			</li>
+		</ol>
+	</div>
+	<!-- biao dan -->
+	<div id="ck">
+	<input type="checkbox" id="checkbox" v-model="checked">
+	<label for="checkbox">{{checked}}</label>
+	</div>
+	<script>
+	new Vue({
+		el: '#app',
+		data : {
+			message : 'Helo Vue.js'
+		}
+	});
+	new Vue({
+		el: '#app2',
+		data: {
+			todos : [
+				{text : 'Learn coffeescript'},
+				{text : 'Learn jquery'},
+				{text : 'Learn vue.js'}
+			]
+		}
+	});
+	new Vue({
+		el: '#ck',
+		data: {
+			checked:''
+		}
+	})
+	</script>
+</body>
+</html>
